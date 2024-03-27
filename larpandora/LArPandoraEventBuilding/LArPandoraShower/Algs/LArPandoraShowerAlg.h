@@ -108,7 +108,9 @@ public:
                          geo::Vector_t const& dir,
                          unsigned int const& TPC) const;
 
-  double SCECorrectEField(double const& EField, geo::Point_t const& pos) const;
+  double SCECorrectEField(double const& EField, geo::Point_t const& pos, 
+                          detinfo::DetectorPropertiesData const& depProp,
+                          unsigned int const& TPC) const;
 
   std::map<art::Ptr<recob::Hit>, std::vector<art::Ptr<recob::Hit>>> OrganizeHits(
     const std::vector<art::Ptr<recob::Hit>>& hits) const;

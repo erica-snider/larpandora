@@ -312,7 +312,7 @@ namespace ShowerRecoTools {
       //Calculate the dEdx
       double localEField = detProp.Efield();
       if (fSCECorrectEField) {
-        localEField = IShowerTool::GetLArPandoraShowerAlg().SCECorrectEField(localEField, pos);
+        localEField = IShowerTool::GetLArPandoraShowerAlg().SCECorrectEField(localEField, pos, detProp, hit->WireID().TPC);
       }
       double dEdx = fCalorimetryAlg.dEdx_AREA(
         clockData, detProp, dQdx, hit->PeakTime(), planeid.Plane, pfpT0Time, localEField);
